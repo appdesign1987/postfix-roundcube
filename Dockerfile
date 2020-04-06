@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV USERS_QUOTA 50
 
 RUN apt-get update && \
-    apt-get install -y rsyslog wget mariadb-server postfix-mysql ssl-cert dovecot-mysql dovecot-imapd dovecot-pop3d dovecot-lmtpd spamassassin php-imap
+    apt-get install -y rsyslog wget mysql-server postfix-mysql ssl-cert dovecot-mysql dovecot-imapd dovecot-pop3d dovecot-lmtpd spamassassin php-imap
 RUN /bin/bash -c "/usr/bin/mysqld_safe --skip-grant-tables &" && \
 sleep 5 && \
 apt-get install -y postfixadmin roundcube
