@@ -5,8 +5,11 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV USERS_QUOTA 50
 
 RUN apt-get update && \
-    apt-get install -y rsyslog wget postfix-mysql ssl-cert dovecot-mysql dovecot-imapd dovecot-pop3d dovecot-lmtpd spamassassin php-imap postfixadmin roundcube && \
-    adduser vmail -q --home /var/vmail --uid 1150 --disabled-password --gecos "" && \
+    apt-get install -y rsyslog wget mariadb-server postfix-mysql ssl-cert dovecot-mysql dovecot-imapd dovecot-pop3d dovecot-lmtpd spamassassin php-imap
+RUN /bin/bash -c "/usr/bin/mysqld_safe --skip-grant-tables &" && \
+sleep 5 && \
+apt-get install -y postfixadmin roundcube
+RUN  adduser vmail -q --home /var/vmail --uid 1150 --disabled-password --gecos "" && \
     wget -q https://netcologne.dl.sourceforge.net/project/postfixadmin/postfixadmin/postfixadmin-3.2/postfixadmin-3.2.tar.gz && \
     tar -C /var/www/html/ -xf postfixadmin-3.2.tar.gz  && \
     ln -s /var/www/html/postfixadmin-3.2/ /var/www/html/postfixadmin && \
