@@ -7,12 +7,12 @@ ENV USERS_QUOTA 50
 RUN apt-get update && \
     apt-get install -y rsyslog wget postfix-mysql ssl-cert dovecot-mysql dovecot-imapd dovecot-pop3d dovecot-lmtpd spamassassin php-imap postfixadmin roundcube && \
     adduser vmail -q --home /var/vmail --uid 1150 --disabled-password --gecos "" && \
-    wget -q http://downloads.sourceforge.net/project/postfixadmin/postfixadmin/postfixadmin-2.93/postfixadmin-2.93.tar.gz && \
-    tar -C /var/www/html/ -xf postfixadmin-2.93.tar.gz  && \
-    ln -s /var/www/html/postfixadmin-2.93/ /var/www/html/postfixadmin && \
+    wget -q https://netcologne.dl.sourceforge.net/project/postfixadmin/postfixadmin/postfixadmin-3.2/postfixadmin-3.2.tar.gz && \
+    tar -C /var/www/html/ -xf postfixadmin-3.2.tar.gz  && \
+    ln -s /var/www/html/postfixadmin-3.2/ /var/www/html/postfixadmin && \
     wget -q https://github.com/roundcube/roundcubemail/releases/download/1.4.3/roundcubemail-1.4.3-complete.tar.gz  && \
     tar -C /var/www/html/ -xf roundcubemail-1.4.3-complete.tar.gz && \
-    ln -s /var/www/html/ /var/www/html/roundcubemail-1.4.3 && \
+    ln -s /var/www/html/roundcubemail-1.4.3 /var/www/html/roundcubemail && \
     chmod 775 /var/log/ && \
     chmod +x /var/www/html/postfixadmin/scripts/postfixadmin-cli && \
     ln -s /var/www/html/postfixadmin/scripts/postfixadmin-cli /usr/bin/postfixadmin-cli
