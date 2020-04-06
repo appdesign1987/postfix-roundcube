@@ -6,7 +6,7 @@ chown :syslog /var/log/
 chmod 775 /var/log/
 mkdir -p /var/log/apache2 /var/log/mysql
 if [ ! -d "/var/lib/mysql/mysql" ]; then /usr/bin/mysql_install_db;fi
-/etc/init.d/mysql start;
+#/etc/init.d/mysql start;
 if [ ! -d "/var/lib/mysql/mail" ]; 
 then 
     PSSW=`doveadm pw -s MD5-CRYPT -p $ADMIN_PASSWD | sed 's/{MD5-CRYPT}//'`
