@@ -10,9 +10,9 @@ RUN apt-get update && \
     wget -q http://downloads.sourceforge.net/project/postfixadmin/postfixadmin/postfixadmin-2.93/postfixadmin-2.93.tar.gz && \
     tar -C /var/www/html/ -xf postfixadmin-2.93.tar.gz  && \
     ln -s /var/www/html/postfixadmin-2.93/ /var/www/html/postfixadmin && \
-    wget -q http://downloads.sourceforge.net/project/roundcubemail/roundcubemail/1.1.4/roundcubemail-1.1.4-complete.tar.gz && \
-    tar -C /var/www/html/ -xf roundcubemail-1.1.4-complete.tar.gz && \
-    ln -s /var/www/html/roundcubemail-1.1.4 /var/www/html/roundcubemail && \
+    wget -q https://github.com/roundcube/roundcubemail/releases/download/1.4.3/roundcubemail-1.4.3-complete.tar.gz  && \
+    tar -C /var/www/html/roundcubemail -xf roundcubemail-1.4.3-complete.tar.gz && \
+    ln -s /var/www/html/ /var/www/html/roundcubemail && \
     chown :syslog /var/log/ && \
     chmod 775 /var/log/ && \
     chmod +x /var/www/html/postfixadmin/scripts/postfixadmin-cli && \
