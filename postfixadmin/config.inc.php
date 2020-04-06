@@ -80,7 +80,7 @@ function language_hook($PALANG, $language) {
 // mysql = MySQL 3.23 and 4.0, 4.1 or 5
 // mysqli = MySQL 4.1+ or MariaDB
 // pgsql = PostgreSQL
-$CONF['database_type'] = 'mysql';
+$CONF['database_type'] = 'mysqli';
 $CONF['database_host'] = 'mariadb';
 $CONF['database_user'] = 'mail';
 $CONF['database_password'] = 'mail';
