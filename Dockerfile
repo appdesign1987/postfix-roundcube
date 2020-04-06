@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:18.04
 MAINTAINER Marek Chmiel
 
 ENV DEBIAN_FRONTEND noninteractive
