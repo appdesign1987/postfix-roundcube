@@ -85,6 +85,7 @@ $CONF['database_host'] = 'mariadb';
 $CONF['database_user'] = 'mail';
 $CONF['database_password'] = 'mail';
 $CONF['database_name'] = 'mail';
+$CONF['database_use_ssl'] = false;
 // If you need to specify a different port for a MYSQL database connection, use e.g.
 //   $CONF['database_host'] = '172.30.33.66:3308';
 // If you need to specify a different port for POSTGRESQL database connection
